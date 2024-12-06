@@ -1,0 +1,77 @@
+<div class="outer">
+  <div class="inner">
+    <div class="left">
+      <!-- <h1>Fundoo Notes</h1> -->
+      <h1>Sign in</h1>
+      <p>Use your Fundoo Account</p>
+    </div>
+    <div class="right">
+      <div class="top">
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Email or Phone</mat-label>
+            <input matInput placeholder="Email or Phone" />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          placeholder="Password"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+            >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+      </p>
+    </div>
+      <div class="bottom">
+        <a href="#">Forgot password</a>
+      <button mat-flat-button color="primary" (click)="onSubmit()">
+        Login
+      </button> 
+    </div>
+  </div>
+</div>  
+
+<!-- <div class="container">
+  <mat-progress-bar mode="indeterminate" *ngIf="bar == true"></mat-progress-bar>
+  <h1>Fundoo Notes</h1>
+  <h2>Sign in</h2>
+  <p>Use your Fundoo Account</p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Email or Phone</mat-label>
+      <input matInput placeholder="Email or Phone" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        placeholder="Password"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <a href="#">Forgot password</a>
+  </p>
+  <button mat-flat-button color="primary" (click)="onSubmit()">Login</button>
+</div> -->

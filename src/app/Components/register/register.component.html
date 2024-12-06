@@ -1,0 +1,153 @@
+<div class="outer">
+  <div class="inner">
+    <mat-progress-bar mode="indeterminate" *ngIf="bar == true"></mat-progress-bar>
+    <div class="header">
+      <h1>Create your Fundoo Account</h1>
+    </div>
+    <div class="main">
+      <div class="left">
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>First name</mat-label>
+            <input matInput placeholder="Email or Phone" />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Last name</mat-label>
+            <input matInput placeholder="Email or Phone" />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Email or Phone</mat-label>
+            <input matInput placeholder="Email or Phone" />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="right">
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              [type]="hidePassword ? 'password' : 'text'"
+              placeholder="Password"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hidePassword = !hidePassword"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hidePassword"
+            >
+              <mat-icon>{{ hidePassword ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input
+              matInput
+              [type]="hideConfirmPassword ? 'password' : 'text'"
+              placeholder="Confirm Password"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hideConfirmPassword = !hideConfirmPassword"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hideConfirmPassword"
+            >
+              <mat-icon>{{ hideConfirmPassword ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+        </p>
+        <div class="foo">
+          <a href="login">Sign in Insteat</a>  
+          <button mat-flat-button color="primary" (click)="onSubmit()">Register</button>
+          </div>
+      </div>
+    </div>
+    <!-- <div class="footer">
+      <h1>Foo</h1>
+    </div> -->
+    
+  </div>
+</div>  
+
+
+
+<!-- <p>register works!</p> -->
+<!-- <div class="container">
+  <mat-progress-bar mode="indeterminate" *ngIf="bar == true"></mat-progress-bar>
+  <h1>Fundoo Notes</h1>
+  <h2>Create yout Fundoo Account</h2>
+  <div class="names">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>First name</mat-label>
+        <input matInput placeholder="Email or Phone" />
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Last name</mat-label>
+        <input matInput placeholder="Email or Phone" />
+      </mat-form-field>
+    </p>
+  </div>
+  <div class="email">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Email or Phone</mat-label>
+        <input matInput placeholder="Email or Phone" />
+      </mat-form-field>
+    </p>
+  </div>
+  <div class="password">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="hidePassword ? 'password' : 'text'"
+          placeholder="Password"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hidePassword = !hidePassword"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hidePassword"
+        >
+          <mat-icon>{{ hidePassword ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input
+          matInput
+          [type]="hideConfirmPassword ? 'password' : 'text'"
+          placeholder="Confirm Password"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hideConfirmPassword = !hideConfirmPassword"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hideConfirmPassword"
+        >
+          <mat-icon>{{ hideConfirmPassword ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </p>
+  </div>
+  <div class="footer">
+    <a href="login">Sign in Insteat</a>  
+    <button mat-flat-button color="primary" (click)="onSubmit()">Register</button>
+    </div>
+</div> -->
