@@ -1,7 +1,7 @@
 <div class="outer">
   <div class="inner">
     <div class="left">
-      <!-- <h1>Fundoo Notes</h1> -->
+      <img src="../../../assets/logo.png" alt="Logo" >
       <h1>Sign in</h1>
       <p>Use your Fundoo Account</p>
     </div>
@@ -31,47 +31,16 @@
             <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
         </mat-form-field>
+        <a href="forgotpassword">Forgot password</a>
       </p>
     </div>
       <div class="bottom">
-        <a href="#">Forgot password</a>
+        <a href="register">Create Account</a>
       <button mat-flat-button color="primary" (click)="onSubmit()">
         Login
       </button> 
+
     </div>
   </div>
 </div>  
 
-<!-- <div class="container">
-  <mat-progress-bar mode="indeterminate" *ngIf="bar == true"></mat-progress-bar>
-  <h1>Fundoo Notes</h1>
-  <h2>Sign in</h2>
-  <p>Use your Fundoo Account</p>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Email or Phone</mat-label>
-      <input matInput placeholder="Email or Phone" />
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Password</mat-label>
-      <input
-        matInput
-        [type]="hide ? 'password' : 'text'"
-        placeholder="Password"
-      />
-      <button
-        mat-icon-button
-        matSuffix
-        (click)="hide = !hide"
-        [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hide"
-      >
-        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-      </button>
-    </mat-form-field>
-    <a href="#">Forgot password</a>
-  </p>
-  <button mat-flat-button color="primary" (click)="onSubmit()">Login</button>
-</div> -->
