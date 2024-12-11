@@ -8,13 +8,24 @@
 }
 
 .inner{
+  // width: 840px;
+  // height: 348px;
   width: 70%;
   height: 50%;
   background-color: white;
   border-radius: 30px;
-  display: flex;
+  
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.container{
+  display: flex;
+}
+mat-progress-bar{
+  margin-top: -19px;
+  margin-bottom: 19px;
+  border-radius: 5px;
+  width: 100%; 
 }
 .left,.right{
   flex:1;
@@ -38,10 +49,10 @@ img{
   flex-direction: column;
   justify-content: space-around;
   padding: 20px;
+  line-height: 2.5rem;
 }
 
-.top{
-}
+
 
 mat-form-field{
   width: 100%;
@@ -50,7 +61,30 @@ mat-form-field{
 
 
 .bottom{
-  padding: 10px;
   display: flex;
   justify-content: space-between;
+}
+
+
+a {
+  text-decoration: none; /* Remove underline */
+  color: #007bff; /* Default link color */
+  font-size: 14px; /* Slightly smaller text for subtle links */
+  font-weight: 500;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3; /* Slightly darker color on hover */
+  text-decoration: underline; /* Underline only on hover */
+}
+
+a:active {
+  color: #003580; /* Even darker color when clicked */
+}
+
+a:focus {
+  outline: none; /* Remove default focus outline */
+  text-decoration: underline; /* Keep underline on focus for accessibility */
+  box-shadow: 0 0 2px #007bff; /* Add a subtle focus glow */
 }

@@ -1,16 +1,51 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/Services/userServices/user.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   hide: boolean = true;
-  bar:boolean=false;
+  bar: boolean = false;
+  loginForm!: FormGroup;
+  submitted = false;
+  constructor(
+    private fromBuilder: FormBuilder,
+    private user: UserService,
+    private router: Router
+  ) {}
 
-
-  onSubmit(){
-    this.bar=true;
+  ngOnInit(): void {
+    this.loginForm = this.fromBuilder.group({
+      username: [''],
+      password: [''],
+    });
+  }
+  onSubmit() {
+    this.bar = true;
+    this.submitted = true;
+    if (this.loginForm.valid) {
+      let reqDate = {
+        username: this.loginForm.value.username,
+        password: this.loginForm.value.password
+      };
+      this.user.login(reqDate).subscribe(
+        (response: any) => {
+          alert('login successfull');
+          // console.log(response);
+          this.router.navigate(['/dashboard']);
+          this.bar = false;
+        },
+        (error) => {
+          this.bar = false;
+          alert('Login failed. Please try again.');
+          console.error(error.message);
+        }
+      );
+    }
   }
 }

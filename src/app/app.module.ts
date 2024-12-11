@@ -13,13 +13,17 @@ import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,9 @@ import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassw
     MatIconModule,
     MatCheckboxModule,
     FormsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
