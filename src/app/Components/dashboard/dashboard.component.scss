@@ -1,0 +1,136 @@
+/* General Styling */
+mat-toolbar {
+  // display: flex;
+  // justify-content: space-evenly;
+  // align-items: center;
+  background-color: #f4f4f4;
+  height: 10vh;
+  padding: 0 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  
+}
+
+/* Styling for Divs in Toolbar */
+.firstdiv {
+  display: flex;
+  align-items: center;
+}
+
+.firstdiv .logo {
+  width: 32px;
+  height: 32px;
+  margin-left: 8px;
+}
+
+.firstdiv .brand-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.seconddiv {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  
+}
+
+.seconddiv .search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 60%;
+  max-width: 500px;
+  margin: 0;
+  left: 60px;
+  background-color: #000;
+  
+}
+.search-container{
+ 
+  background-color: #000;
+}
+.seconddiv .search-icon-button {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  // padding: 10px;
+}
+
+.seconddiv .search-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.seconddiv .search-input {
+  width: 100%;
+  padding: 8px 12px 8px 40px; /* Leaves space for the icon */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.thirddiv {
+  display: flex;
+  gap: 10px;
+}
+
+.favorite-icon {
+  color: red;
+}
+
+/* Side Navigation Bar Styling */
+mat-sidenav {
+  width: 250px;
+  background-color: #ffffff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+mat-nav-list {
+  padding: 0;
+}
+
+.sidenav-item {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 16px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  transition: background-color 0.3s;
+}
+
+.sidenav-item:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.sidenav-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+}
+
+/* Content Styling */
+.content {
+  padding: 16px;
+  background-color: #fafafa;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  mat-sidenav {
+    width: 200px;
+  }
+
+  .seconddiv .search-container {
+    width: 80%;
+  }
+}

@@ -42,6 +42,7 @@ export class ForgotpasswordComponent implements OnInit{
         },
         (error) => {
           alert('Something went wrong. Please try again.');
+          console.log(error.message)
           this.bar=false;
         }
       )

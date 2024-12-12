@@ -1,1 +1,93 @@
-<p>dashboard works!</p>
+<mat-toolbar>
+  <div class="firstdiv">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      (click)="toggleSidenav()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img
+      class="logo"
+      src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
+      alt="Logo"
+      role="presentation"
+    />
+    <span class="brand-name">FundooNotes</span>
+  </div>
+  <div class="seconddiv">
+    <div class="search-container">
+      <button mat-icon-button class="search-icon-button" aria-label="Search">
+        <img src="../../../assets/search.png" alt="Search Icon" class="search-icon" />
+      </button>
+      <input matInput placeholder="Search" value="" class="search-input" />
+    </div>
+  </div>
+
+  <div class="thirddiv">
+    <button mat-icon-button class="favorite-icon" aria-label="Favorite">
+      <img src="../../../assets/refresh-icon.png" alt="" />
+    </button>
+    <button mat-icon-button aria-label="Share">
+      <img src="../../../assets/listview-icon.png" alt="" />
+    </button>
+    <button mat-icon-button aria-label="Share">
+      <img src="../../../assets/settings-icon.png" alt="" />
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpen" (mouseenter)="hoverSidenav(true)" (mouseleave)="hoverSidenav(false)" [ngStyle]="{ width: isHovered ? '250px' : '65px' }" [opened]="true">
+    <mat-nav-list>
+      <a mat-list-item class="sidenav-item">
+        <img
+          class="sidenav-icon"
+          src="../../../assets/notes-icon.png"
+          alt="Notes"
+        />
+        <span *ngIf="isHovered">Notes</span>
+      </a>
+      <a mat-list-item class="sidenav-item">
+        <img
+          class="sidenav-icon"
+          src="../../../assets/remainder-icon.png"
+          alt="Remainders"
+        />
+        <span *ngIf="isHovered">Remainders</span>
+      </a>
+      <a mat-list-item class="sidenav-item">
+        <img
+          class="sidenav-icon"
+          src="../../../assets/editlabels-icon.png"
+          alt="Edit Labels"
+        />
+        <span *ngIf="isHovered">Edit Labels</span>
+      </a>
+      <a mat-list-item class="sidenav-item">
+        <img
+          class="sidenav-icon"
+          src="../../../assets/archive-icon.png"
+          alt="Archive"
+        />
+        <span *ngIf="isHovered">Archive</span>
+      </a>
+      <a mat-list-item class="sidenav-item">
+        <img
+          class="sidenav-icon"
+          src="../../../assets/trash-icon.png"
+          alt="Trash"
+        />
+        <span *ngIf="isHovered">Trash</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content" style="height: 90vh">
+    <!-- Your content here -->
+     <div class="top">
+       <app-addnotes></app-addnotes>
+     </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

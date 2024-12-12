@@ -1,0 +1,85 @@
+<div class="outer">
+  <mat-card appearance="outlined" class="inner1" *ngIf="!condition">
+    <div class="container">
+      <div class="addnote" (click)="toggleCondition()">Take a notes...</div>
+      <div class="icons">
+        <button mat-icon-button>
+          <img
+            class="sidenav-icon"
+            src="../../../assets/new-list-icon.png"
+            alt="Remainders"
+          />
+        </button>
+        <button mat-icon-button>
+          <img
+            class="sidenav-icon"
+            src="../../../assets/brush-icon.png"
+            alt="Remainders"
+          />
+        </button>
+        <button mat-icon-button>
+          <img
+            class="sidenav-icon"
+            src="../../../assets/image-icon.png"
+            alt="Remainders"
+          />
+        </button>
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-card appearance="outlined" class="inner2" *ngIf="condition" #matCard>
+    <div class="container2">
+      <div class="title">
+        <textarea
+          class="textInput"
+          [(ngModel)]="titleText"
+          rows="1"
+          (input)="adjustTextareaHeight($event)"
+          placeholder="Title"
+          style="overflow: hidden; resize: none"
+        ></textarea>
+
+        <button mat-icon-button>
+          <img
+            class="sidenav-icon"
+            src="../../../assets/keep-icon.png"
+            alt="Keep"
+          />
+        </button>
+      </div>
+      <div class="note">
+        <textarea
+          class="textInput"
+          [(ngModel)]="noteText"
+          rows="1"
+          (input)="adjustTextareaHeight($event)"
+          placeholder="Take a note..."
+          style="overflow: hidden; resize: none"
+        ></textarea>
+      </div>
+      <div class="bottom">
+        <div class="right">
+          <app-app-icons></app-app-icons>
+          <button mat-icon-button style="user-select: none">
+            <img
+              class="sidenav-icon"
+              src="../../../assets/undo-icon.png"
+              alt="Remainders"
+            />
+          </button>
+          <button mat-icon-button>
+            <img
+              class="sidenav-icon"
+              src="../../../assets/redo-icon.png"
+              alt="Remainders"
+            />
+          </button>
+        </div>
+        <div class="left">
+          <button mat-flat-button (click)="toggleCondition()">Close</button>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>

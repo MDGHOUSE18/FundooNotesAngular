@@ -1,0 +1,108 @@
+/* Outer container for the component */
+.outer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+mat-card {
+  border-radius: 15px;
+}
+/* Styling for the first mat-card when condition is false */
+.inner1 {
+  height: 6vh;
+  width: 40vw;
+}
+
+/* Styling for the second mat-card when condition is true */
+.inner2 {
+  min-height: 15vh;
+  height: auto;
+  width: 35vw;
+}
+
+/* Container for elements in the first mat-card */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw;
+  height: 2vh;
+  width: 100%;
+}
+
+/* Styling for side navigation items */
+.sidenav-item {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 16px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for side navigation items */
+.sidenav-item:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Styling for side navigation icons */
+.sidenav-icon {
+  width: 3.5vh;
+  height: 3.5vh;
+}
+
+/* Styling for the "Take a notes..." div */
+.addnote {
+  width: 70%;
+}
+
+/* Container for the icons in the first mat-card */
+.icons {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  padding: 1vw;
+}
+
+/* Styling for the right-side section in the second mat-card */
+.right {
+  display: flex;
+}
+
+/* Styling for the bottom section in the second mat-card */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Container for elements in the second mat-card */
+.container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Styling for the title section in the second mat-card */
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styling for the text input fields */
+.textInput {
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 1.5; /* Matches the line spacing */
+  font-size: 14px;
+  padding: 2.5vh;
+  height: 1vh;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+}

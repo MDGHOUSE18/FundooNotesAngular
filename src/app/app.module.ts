@@ -1,43 +1,66 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
+// Angular Material Modules
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+
+// App Routing Module
 import { AppRoutingModule } from './app-routing.module';
+
+// Components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { AddnotesComponent } from './Components/addnotes/addnotes.component';
+import { AppIconsComponent } from './Components/app-icons/app-icons.component';
 
 @NgModule({
   declarations: [
+    // Declare all components used in the application
     AppComponent,
     LoginComponent,
     RegisterComponent,
     ForgotpasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddnotesComponent,
+    AppIconsComponent
   ],
   imports: [
+    // Core Angular modules
     BrowserModule,
-    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+
+    // Angular Material modules
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
     MatIconModule,
     MatCheckboxModule,
-    FormsModule,
     MatProgressBarModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCardModule,
+
+    // App routing module
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
