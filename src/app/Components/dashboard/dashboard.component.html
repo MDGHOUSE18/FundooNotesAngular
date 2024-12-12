@@ -19,7 +19,11 @@
   <div class="seconddiv">
     <div class="search-container">
       <button mat-icon-button class="search-icon-button" aria-label="Search">
-        <img src="../../../assets/search.png" alt="Search Icon" class="search-icon" />
+        <img
+          src="../../../assets/search.png"
+          alt="Search Icon"
+          class="search-icon"
+        />
       </button>
       <input matInput placeholder="Search" value="" class="search-input" />
     </div>
@@ -39,7 +43,16 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpen" (mouseenter)="hoverSidenav(true)" (mouseleave)="hoverSidenav(false)" [ngStyle]="{ width: isHovered ? '250px' : '65px' }" [opened]="true">
+  <!-- Static sidenav always open -->
+  <mat-sidenav
+    #sidenav
+    mode="side"
+    (mouseenter)="hoverSidenav(true)"
+    (mouseleave)="hoverSidenav(false)"
+    [ngStyle]="{ width: isHovered ? '250px' : '60px' }"
+    [opened]="true"
+    class="static-sidenav"
+  >
     <mat-nav-list>
       <a mat-list-item class="sidenav-item">
         <img
@@ -83,11 +96,58 @@
       </a>
     </mat-nav-list>
   </mat-sidenav>
-
-  <mat-sidenav-content class="content" style="height: 90vh">
+  
+  <mat-sidenav
+    #staticSidenav
+    mode="side"
+    [opened]="isSidenavOpen"
+    class="static-sidenav"
+  >
+    <mat-nav-list>
+      <a mat-list-item class="sidenav-item">
+        <img
+          class="sidenav-icon"
+          src="../../../assets/notes-icon.png"
+          alt="Notes"
+        />
+        <span>Notes</span>
+      </a>
+      <a mat-list-item class="sidenav-item">
+        <img
+          class="sidenav-icon"
+          src="../../../assets/remainder-icon.png"
+          alt="Remainders"
+        />
+        <span>Remainders</span>
+      </a>
+      <a mat-list-item class="sidenav-item">
+        <img
+          class="sidenav-icon"
+          src="../../../assets/editlabels-icon.png"
+          alt="Edit Labels"
+        />
+        <span>Edit Labels</span>
+      </a>
+      <a mat-list-item class="sidenav-item">
+        <img
+          class="sidenav-icon"
+          src="../../../assets/archive-icon.png"
+          alt="Archive"
+        />
+        <span>Archive</span>
+      </a>
+      <a mat-list-item class="sidenav-item">
+        <img
+          class="sidenav-icon"
+          src="../../../assets/trash-icon.png"
+          alt="Trash"
+        />
+        <span>Trash</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content" >
     <!-- Your content here -->
-     <div class="top">
-       <app-addnotes></app-addnotes>
-     </div>
+      <app-addnotes></app-addnotes>
   </mat-sidenav-content>
 </mat-sidenav-container>
