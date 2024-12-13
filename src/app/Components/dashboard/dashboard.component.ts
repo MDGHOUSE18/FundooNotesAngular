@@ -7,18 +7,20 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
   isSidenavOpen: boolean = false; // Tracks if the sidenav is toggled open or closed.
-  isHovered: boolean = false;   // Tracks hover state of the sidenav.
+  isHovered: boolean = true;   // Tracks hover state of the sidenav.
   isside:boolean=true;
   /**
    * Toggles the sidenav between open and closed states.
    */
   toggleSidenav(): void {
     this.isSidenavOpen = !this.isSidenavOpen;
-    this.isside = !this.isside;
+    this.isHovered = !this.isHovered;
   }
 
 
-  hoverSidenav(hoverState: boolean): void {
-    this.isHovered = hoverState;
+  hoverSidenav(isHovering: boolean): void {
+    if (!this.isSidenavOpen) {
+      this.isHovered = isHovering;
+    }
   }
 }

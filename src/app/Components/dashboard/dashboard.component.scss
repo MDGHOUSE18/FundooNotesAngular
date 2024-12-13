@@ -22,9 +22,18 @@ mat-toolbar {
 }
 
 .firstdiv .brand-name {
-  font-size: 20px;
-  font-weight: bold;
-  margin-left: 10px;
+  display: block;
+  font-family: "Product Sans", Arial, sans-serif;
+  font-size: 22px;
+  line-height: 28px;
+  overflow: hidden;
+  padding-left: 8px;
+  position: relative;
+  text-overflow: ellipsis;
+  top: -1.5px;
+  // vertical-align: middle;
+  color: #5f6368;
+  opacity: 1;
 }
 
 .seconddiv {
@@ -129,7 +138,10 @@ mat-nav-list {
   transform: scale(1.02);
   cursor: pointer;
 }
-
+.sidenav-item:active{
+  background-color: #ddeb1f; // Highlight background
+  border-left: 4px solid #1976d2; // Blue border to indicate selection
+}
 /* Content Styling */
 .content {
   padding: 16px;

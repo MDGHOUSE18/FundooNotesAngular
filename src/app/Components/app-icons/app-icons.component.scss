@@ -1,0 +1,14 @@
+img {
+  width: 20px;
+}
+img:hover {
+  transform: scale(1.2); // Slight zoom effect on hover
+  background-color: rgba(0, 0, 0, 0.2); // Add background color on hover
+  border-radius: 50%; // Make the image background circular
+}
+.icons {
+  font-family: "Roboto", arial, sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.5vw;
+}

@@ -15,6 +15,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import {MatMenuModule} from '@angular/material/menu';
 
 // App Routing Module
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +28,8 @@ import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassw
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { AddnotesComponent } from './Components/addnotes/addnotes.component';
 import { AppIconsComponent } from './Components/app-icons/app-icons.component';
+import { NoteCardsComponent } from './Components/note-cards/note-cards.component';
+import { NotesContainerComponent } from './Components/notes-container/notes-container.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,9 @@ import { AppIconsComponent } from './Components/app-icons/app-icons.component';
     ForgotpasswordComponent,
     DashboardComponent,
     AddnotesComponent,
-    AppIconsComponent
+    AppIconsComponent,
+    NoteCardsComponent,
+    NotesContainerComponent
   ],
   imports: [
     // Core Angular modules
@@ -58,6 +63,7 @@ import { AppIconsComponent } from './Components/app-icons/app-icons.component';
     MatSidenavModule,
     MatListModule,
     MatCardModule,
+    MatMenuModule,
 
     // App routing module
     AppRoutingModule

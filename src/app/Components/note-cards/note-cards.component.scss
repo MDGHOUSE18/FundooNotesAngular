@@ -1,0 +1,38 @@
+.note-card-main-div{
+    display: flex;
+}
+.note-card-main{
+    width: 16vw;
+    height: auto;
+    box-shadow: 1px 1px 4px 1px #888888;
+    font-family: "Google Sans", Roboto, Arial, sans-serif; /* Applies font to the card */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    background-color: #fff; /* Optional: Sets a white background */
+    overflow: hidden; /* Ensures content doesn't spill out */
+
+}
+
+.note-card-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw;
+}
+
+.note-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.pin-icon {
+    width: 24px;
+    height: 24px;
+}
+
+img {
+  width: 20px;
+}
+img:hover {
+  transform: scale(1.2); // Slight zoom effect on hover
+  background-color: rgba(0, 0, 0, 0.2); // Add background color on hover
+  border-radius: 50%; // Make the image background circular
+}

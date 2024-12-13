@@ -37,7 +37,10 @@ export class LoginComponent implements OnInit {
         (response: any) => {
           alert('login successfull');
           // console.log(response);
-          this.router.navigate(['/dashboard']);
+
+          localStorage.setItem('token',response.data);
+          sessionStorage.setItem('token',response.data);
+          this.router.navigate(['/dashboard/notes']);
           this.bar = false;
         },
         (error) => {
