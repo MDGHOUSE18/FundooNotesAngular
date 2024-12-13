@@ -1,13 +1,12 @@
 /* General Styling */
 mat-toolbar {
-  // display: flex;
-  // justify-content: space-evenly;
-  // align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #f4f4f4;
   height: 10vh;
   padding: 0 16px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  
 }
 
 /* Styling for Divs in Toolbar */
@@ -23,43 +22,49 @@ mat-toolbar {
 }
 
 .firstdiv .brand-name {
-  font-size: 20px;
-  font-weight: bold;
-  margin-left: 10px;
+  display: block;
+  font-family: "Product Sans", Arial, sans-serif;
+  font-size: 22px;
+  line-height: 28px;
+  overflow: hidden;
+  padding-left: 8px;
+  position: relative;
+  text-overflow: ellipsis;
+  top: -1.5px;
+  // vertical-align: middle;
+  color: #5f6368;
+  opacity: 1;
 }
 
 .seconddiv {
   display: flex;
   align-items: center;
   flex-grow: 1;
-  
+  justify-content: center;
 }
 
 .seconddiv .search-container {
+ 
   position: relative;
   display: flex;
   align-items: center;
-  width: 60%;
-  max-width: 500px;
-  margin: 0;
-  left: 60px;
-  background-color: #000;
+  width: 80%;
+  max-width: 650px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 0 8px;
   
 }
-.search-container{
- 
-  background-color: #000;
-}
+
 .seconddiv .search-icon-button {
   position: absolute;
-  left: 0px;
+  left: 8px;
   top: 50%;
   transform: translateY(-50%);
   border: none;
   background: transparent;
   padding: 0;
   cursor: pointer;
-  // padding: 10px;
 }
 
 .seconddiv .search-icon {
@@ -69,10 +74,12 @@ mat-toolbar {
 
 .seconddiv .search-input {
   width: 100%;
-  padding: 8px 12px 8px 40px; /* Leaves space for the icon */
+  padding: 8px 8px 8px 60px; /* Leaves space for the icon */
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 2.5vh;
+  height: 4vh;
   font-size: 14px;
+  
 }
 
 .thirddiv {
@@ -87,10 +94,12 @@ mat-toolbar {
 /* Side Navigation Bar Styling */
 mat-sidenav {
   width: 250px;
-  background-color: #ffffff;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  background-color: #fafafa;
+  // box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 }
-
+.static-sidenav{
+  border: none;
+}
 mat-nav-list {
   padding: 0;
 }
@@ -104,24 +113,40 @@ mat-nav-list {
   font-size: 16px;
   font-weight: 500;
   color: #000;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 2vh;
+}
+
+.sidenav-item img {
+  margin-right: 16px;
+  width: 3.5vh;
+  height: 3.5vh;
+  display: inline-block;
+}
+
+.sidenav-item span {
+  display: inline-block;
+  vertical-align: middle;
+  height: 3.5vh;
+  margin-top: -1.5vh;
 }
 
 .sidenav-item:hover {
-  background-color: #f0f0f0;
+  background-color: #e0e0e0;
+  transform: scale(1.02);
   cursor: pointer;
 }
-
-.sidenav-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 16px;
+.sidenav-item:active{
+  background-color: #ddeb1f; // Highlight background
+  border-left: 4px solid #1976d2; // Blue border to indicate selection
 }
-
 /* Content Styling */
 .content {
   padding: 16px;
   background-color: #fafafa;
+  min-height: 85vh;
 }
 
 /* Responsive Styling */

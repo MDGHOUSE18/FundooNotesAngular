@@ -1,46 +1,31 @@
-<div class="container">
-  <div class="icons">
-    <button mat-icon-button>
-      <img
-        class="sidenav-icon"
-        src="../../../assets/remaind-me-icon.png"
-        alt="Remainders"
-      />
-    </button>
-    <button mat-icon-button>
-      <img
-        class="sidenav-icon"
-        src="../../../assets/collaburator-icon.png"
-        alt="Remainders"
-      />
-    </button>
-    <button mat-icon-button>
-      <img
-        class="sidenav-icon"
-        src="../../../assets/image-icon.png"
-        alt="Remainders"
-      />
-    </button>
-    <button mat-icon-button>
-      <img
-        class="sidenav-icon"
-        src="../../../assets/new-list-icon.png"
-        alt="Remainders"
-      />
-    </button>
-    <button mat-icon-button>
-      <img
-        class="sidenav-icon"
-        src="../../../assets/archive-icon.png"
-        alt="Remainders"
-      />
-    </button>
-    <button mat-icon-button>
-      <img
-        class="sidenav-icon"
-        src="../../../assets/more-icon.png"
-        alt="Remainders"
-      />
-    </button>
-  </div>
+<!-- <div class="container"> -->
+<div class="icons">
+  <img class="icons" src="../../../assets/remaind-me-icon.png" alt="remaind" />
+
+  <img
+    class="icons"
+    src="../../../assets/collaburator-icon.png"
+    alt="collaburator"
+  />
+
+  <img class="icons" src="../../../assets/image-icon.png" alt="image" />
+
+  <img class="icons" src="../../../assets/new-list-icon.png" alt="new-list" />
+
+  <img class="icons" src="../../../assets/archive-icon.png" alt="archive" (click)="onArchive()"/>
+
+  <img
+    class="icons"
+    src="../../../assets/more-icon.png"
+    alt="moremenu"
+    [matMenuTriggerFor]="moremenu"
+  />
 </div>
+<mat-menu #moremenu="matMenu">
+  <button mat-menu-item (click)="onDelete()">Delete Note</button>
+  <button mat-menu-item>Add label</button>
+  <button mat-menu-item>Add drawing</button>
+  <button mat-menu-item>Make a copy</button>
+  <button mat-menu-item>Show checkboxes</button>
+</mat-menu>
+<!-- </div> -->

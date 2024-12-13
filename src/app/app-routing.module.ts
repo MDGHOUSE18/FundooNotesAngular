@@ -6,15 +6,22 @@ import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassw
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { AddnotesComponent } from './Components/addnotes/addnotes.component';
 import { AppIconsComponent } from './Components/app-icons/app-icons.component';
+import { NoteCardsComponent } from './Components/note-cards/note-cards.component';
+import { NotesContainerComponent } from './Components/notes-container/notes-container.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
   { path: 'login', component: LoginComponent },
   {path:'register',component:RegisterComponent},
   {path:'forgotpassword',component:ForgotpasswordComponent},
-  {path:'dashboard',component:DashboardComponent},
+  {path:'dashboard',component:DashboardComponent,
+    children:[
+      {path:'notes',component:NotesContainerComponent}
+    ]
+  },
   {path:'addnotes',component:AddnotesComponent},
-  {path:'icons',component:AppIconsComponent}
+  {path:'icons',component:AppIconsComponent},
+  {path:'notes',component:NoteCardsComponent}
 ];
 
 @NgModule({
