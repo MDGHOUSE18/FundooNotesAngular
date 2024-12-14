@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { NotesService } from 'src/app/Services/notesService/notes.service';
+import { UpdateNoteComponent } from '../update-note/update-note.component';
 
 @Component({
   selector: 'app-note-cards',
@@ -9,7 +11,26 @@ import { NotesService } from 'src/app/Services/notesService/notes.service';
 export class NoteCardsComponent {
   @Input() noteCardData: any;
 
-  constructor(private notes:NotesService){}
+  constructor(
+    private notes:NotesService,
+    private dialog:MatDialog
+  ){}
+
+
+  editNotesDialogBox(notes:any){
+    // console.log(notes);
+    const dialogbox = this.dialog.open(UpdateNoteComponent,{
+      width:'40%',
+      height:'auto',
+      data:notes
+    })
+    dialogbox.afterClosed().subscribe((updatedNote) => {
+      if (updatedNote) {
+        console.log('Updated note received:', updatedNote);
+        // Update your notes array or send data to the server
+      }
+    });
+  }
 
   onPin(){
     const notesId = this.noteCardData.notesId;
@@ -24,4 +45,5 @@ export class NoteCardsComponent {
     )
 
   }
+
 }

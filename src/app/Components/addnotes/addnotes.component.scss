@@ -6,17 +6,20 @@
   align-items: center;
   gap: 20px;
 }
+
+/* General styling for mat-card */
 mat-card {
   box-shadow: 1px 1px 4px 1px #888888;
   border-radius: 15px;
 }
-/* Styling for the first mat-card when condition is false */
+
+/* Styling for the first mat-card (condition: false) */
 .inner1 {
   height: 6vh;
   width: 40vw;
 }
 
-/* Styling for the second mat-card when condition is true */
+/* Styling for the second mat-card (condition: true) */
 .inner2 {
   min-height: 15vh;
   height: auto;
@@ -61,15 +64,18 @@ mat-card {
 /* Styling for the "Take a notes..." div */
 .addnote {
   width: 70%;
+  // letter-spacing: 0.0142857143em;
+  // font-family: Roboto, Arial, sans-serif;
+  // font-size: 0.875rem;
+  // font-weight: 400;
+  // line-height: 1.25rem;
 }
 
 /* Container for the icons in the first mat-card */
 .icons {
-  // width: 30%;
   display: flex;
   justify-content: space-evenly;
   padding: 1vw;
-  // padding: 1vw;
 }
 
 /* Styling for the right-side section in the second mat-card */
@@ -88,39 +94,56 @@ mat-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 1vw;
 }
 
-/* Styling for the title section in the second mat-card */
-.title {
+/* Title section styling in the second mat-card */
+.top {
   display: flex;
   justify-content: space-between;
 }
 
-/* Styling for the text input fields */
-.textInput {
-  width: 100%;
-  box-sizing: border-box;
-  line-height: 1.5; /* Matches the line spacing */
-  font-size: 14px;
-  padding: 2.5vh;
-  height: 1vh;
+/* Title styling */
+.title {
+  letter-spacing: 0.00625em;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
   border: none;
   outline: none;
-  border-radius: 20px;
-}
-img {
-  width: 20px;
-}
-img:hover {
-  transform: scale(0.9); // Slight zoom effect on hover
-  background-color: rgba(0, 0, 0, 0.2); // Add background color on hover
-  border-radius: 50%; // Make the image background circular
 }
 
-.btn{
+/* Description styling */
+.description {
+  letter-spacing: 0.0142857143em;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  border: none;
+  outline: none;
+}
+
+/* Image styling */
+img {
+  width: 20px;
+  padding: 0.5vw;
+}
+
+/* Hover effect for images */
+img:hover {
+  transform: scale(0.9); /* Slight zoom effect on hover */
+  background-color: rgba(0, 0, 0, 0.2); /* Add background color on hover */
+  border-radius: 50%; /* Make the image background circular */
+}
+
+/* Button styling */
+.btn {
   border: none;
   background: none;
 }
-button{
+
+button {
   border-radius: 10px;
 }
