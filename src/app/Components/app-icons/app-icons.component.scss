@@ -13,3 +13,13 @@ img:hover {
   padding: 0.5vw;
 }
 
+.color-palate-cnt {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 16vw;
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+

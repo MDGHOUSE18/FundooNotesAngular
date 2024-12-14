@@ -52,20 +52,18 @@
   </div>
 
 </mat-menu> -->
-<mat-menu
-  #colourmenu="matMenu"
-  xPosition="before"
-  class="customize"
-  
->
-  <div *ngFor="let color of colorsArr" class="color-item">
-    <button
-      mat-icon-button
-      class="colorIcon"
-      [style.background]="color.colorCode"
-      matTooltip="{{ color.colorName }}"
-      (click)="selectColour(color.colorCode)"
-    ></button>
+<mat-menu #colourmenu="matMenu" >
+  <div class="color-palate-cnt">
+    <div *ngFor="let color of colorsArr" class="color-item">
+      <button
+        mat-icon-button
+        class="colorIcon"
+        [style.background]="color.colorCode"
+        [style.border]="'1px solid #0e0e0d'"
+        matTooltip="{{ color.colorName }}"
+        (click)="selectColour(color.colorCode)"
+      ></button>
+    </div>
   </div>
 </mat-menu>
 
