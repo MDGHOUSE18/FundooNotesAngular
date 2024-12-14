@@ -52,11 +52,11 @@
   </div>
 
 </mat-menu> -->
-<mat-menu #colourmenu="matMenu" >
+<mat-menu #colourmenu="matMenu">
   <div class="color-palate-cnt">
     <div *ngFor="let color of colorsArr" class="color-item">
       <button
-        mat-icon-button
+        mat-mini-fab
         class="colorIcon"
         [style.background]="color.colorCode"
         [style.border]="'1px solid #0e0e0d'"
