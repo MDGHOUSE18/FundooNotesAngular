@@ -1,0 +1,17 @@
+.archive-container-takenote-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw;
+}
+.archive-container-notes-div{
+    display: flex;
+    justify-content:flex-start;
+    align-items:flex-start;
+    flex-wrap: wrap;
+    gap: 2vw;
+    padding: 2vw;
+    // position: relative;
+    // left: 5vw;
+    
+}

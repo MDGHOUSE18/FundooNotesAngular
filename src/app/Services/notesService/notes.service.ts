@@ -41,4 +41,7 @@ export class NotesService {
   pinNote(notesId:number){
     return this.httpService.patchNoteService(`https://localhost:7054/api/Notes/${notesId}/togglePin`,"",{headers: this.authHeaders()});
   }
+  paintNote(colordata:any){
+    return this.httpService.patchNoteService(`https://localhost:7054/api/Notes/colour`,colordata,{headers: this.authHeaders()});
+  }
 }

@@ -1,5 +1,5 @@
 <div class="note-card-main-div" >
-    <mat-card appearance="outlined" class="note-card-main">
+    <mat-card appearance="outlined" class="note-card-main" [style.background]="noteCardData.colour">
         <mat-card-title class="note-card-title">
             <span class="note-title">{{noteCardData.title}}</span>
             <img class="pin-icon" src="../../../assets/keep-icon.png" alt="pinlogo" width="20px" (click)="onPin()">

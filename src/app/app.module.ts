@@ -16,6 +16,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 // App Routing Module
 import { AppRoutingModule } from './app-routing.module';
@@ -30,6 +31,7 @@ import { AddnotesComponent } from './Components/addnotes/addnotes.component';
 import { AppIconsComponent } from './Components/app-icons/app-icons.component';
 import { NoteCardsComponent } from './Components/note-cards/note-cards.component';
 import { NotesContainerComponent } from './Components/notes-container/notes-container.component';
+import { ArchiveContainerComponent } from './Components/archive-container/archive-container.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { NotesContainerComponent } from './Components/notes-container/notes-cont
     AddnotesComponent,
     AppIconsComponent,
     NoteCardsComponent,
-    NotesContainerComponent
+    NotesContainerComponent,
+    ArchiveContainerComponent
   ],
   imports: [
     // Core Angular modules
@@ -64,6 +67,7 @@ import { NotesContainerComponent } from './Components/notes-container/notes-cont
     MatListModule,
     MatCardModule,
     MatMenuModule,
+    MatTooltipModule,
 
     // App routing module
     AppRoutingModule

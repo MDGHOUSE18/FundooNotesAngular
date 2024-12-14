@@ -8,11 +8,21 @@
     alt="collaburator"
   />
 
+  <img
+    class="icons"
+    src="../../../assets/paint-icon.png"
+    alt="paint"
+    [matMenuTriggerFor]="colourmenu"
+  />
+
   <img class="icons" src="../../../assets/image-icon.png" alt="image" />
 
-  <img class="icons" src="../../../assets/new-list-icon.png" alt="new-list" />
-
-  <img class="icons" src="../../../assets/archive-icon.png" alt="archive" (click)="onArchive()"/>
+  <img
+    class="icons"
+    src="../../../assets/archive-icon.png"
+    alt="archive"
+    (click)="onArchive()"
+  />
 
   <img
     class="icons"
@@ -21,11 +31,42 @@
     [matMenuTriggerFor]="moremenu"
   />
 </div>
+
 <mat-menu #moremenu="matMenu">
-  <button mat-menu-item (click)="onDelete()">Delete Note</button>
+  <button mat-menu-item (click)="onTrash()">Delete Note</button>
   <button mat-menu-item>Add label</button>
   <button mat-menu-item>Add drawing</button>
   <button mat-menu-item>Make a copy</button>
   <button mat-menu-item>Show checkboxes</button>
 </mat-menu>
+<!-- <mat-menu #colourmenu="matMenu" xPosition="before" id="colorPalette" >
+  <div *ngFor="let color of colorsArr">
+    <button 
+    mat-menu-item 
+    [style.background]="color.code" 
+    (click)="onTrash()" 
+    [attr.aria-label]="'Color: ' + color.name" 
+    [title]="color.code">
+    {{ color.name }}
+  </button>
+  </div>
+
+</mat-menu> -->
+<mat-menu
+  #colourmenu="matMenu"
+  xPosition="before"
+  class="customize"
+  
+>
+  <div *ngFor="let color of colorsArr" class="color-item">
+    <button
+      mat-icon-button
+      class="colorIcon"
+      [style.background]="color.colorCode"
+      matTooltip="{{ color.colorName }}"
+      (click)="selectColour(color.colorCode)"
+    ></button>
+  </div>
+</mat-menu>
+
 <!-- </div> -->
