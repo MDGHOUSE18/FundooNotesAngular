@@ -29,4 +29,7 @@ export class HttpService {
   patchNoteService(url: string,data:string,headers:any){
     return this.httpClient.patch(url,data,headers);
   }
+  updateService(url: string,data:string,headers:any){
+    return this.httpClient.put(url,data,headers);
+  }
 }

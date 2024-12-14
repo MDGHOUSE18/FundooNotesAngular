@@ -1,0 +1,98 @@
+/* Container for the Update Note Dialog */
+.update-note-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Roboto", Arial, sans-serif;
+    color: rgb(32, 33, 36);
+    padding: 1vw;
+  }
+  
+  /* Header Section Styling */
+  .top {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Title Styling */
+  .title {
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 1.375rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    padding: 16px 0 12px;
+    border: none;
+    outline: none;
+    background: none;
+  }
+  
+  /* Description Styling */
+  .description {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    letter-spacing: 0.00625em;
+    border: none;
+    outline: none;
+    background: none;
+  }
+  
+  /* Dialog Actions Styling */
+  .dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  
+  /* Right Section Styling (App Icons and Buttons) */
+  .right {
+    display: flex;
+    align-items: center;
+    // gap: 8px;
+  }
+  
+  /* Left Section Styling (Close Button) */
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Button Styling */
+  .btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    background: none;
+  }
+  
+  button {
+    
+    border-radius: 10px;
+  }
+  
+  /* Textarea Placeholder Input Fields Styling */
+  .textInput {
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 1.5; /* Matches the line spacing */
+    font-size: 14px;
+    padding: 2.5vh;
+    height: 1vh;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+  }
+  
+  /* Image Styling */
+  img {
+    width: 24px;
+    padding: 0.5vw;
+  }
+  
+  img:hover {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+    background-color: rgba(0, 0, 0, 0.2); /* Add background color on hover */
+    border-radius: 50%; /* Make the image background circular */
+  }
+  

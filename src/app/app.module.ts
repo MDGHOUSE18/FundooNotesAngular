@@ -17,6 +17,7 @@ import { MatListModule } from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
 
 // App Routing Module
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +33,7 @@ import { AppIconsComponent } from './Components/app-icons/app-icons.component';
 import { NoteCardsComponent } from './Components/note-cards/note-cards.component';
 import { NotesContainerComponent } from './Components/notes-container/notes-container.component';
 import { ArchiveContainerComponent } from './Components/archive-container/archive-container.component';
+import { UpdateNoteComponent } from './Components/update-note/update-note.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { ArchiveContainerComponent } from './Components/archive-container/archiv
     AppIconsComponent,
     NoteCardsComponent,
     NotesContainerComponent,
-    ArchiveContainerComponent
+    ArchiveContainerComponent,
+    UpdateNoteComponent
   ],
   imports: [
     // Core Angular modules
@@ -68,6 +71,7 @@ import { ArchiveContainerComponent } from './Components/archive-container/archiv
     MatCardModule,
     MatMenuModule,
     MatTooltipModule,
+    MatDialogModule,
 
     // App routing module
     AppRoutingModule

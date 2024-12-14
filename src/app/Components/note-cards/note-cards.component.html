@@ -1,11 +1,11 @@
 <div class="note-card-main-div" >
     <mat-card appearance="outlined" class="note-card-main" [style.background]="noteCardData.colour">
         <mat-card-title class="note-card-title">
-            <span class="note-title">{{noteCardData.title}}</span>
+            <span class="note-title" (click)="editNotesDialogBox(noteCardData)">{{noteCardData.title}}</span>
             <img class="pin-icon" src="../../../assets/keep-icon.png" alt="pinlogo" width="20px" (click)="onPin()">
         </mat-card-title>
         <mat-card-content class="note-card-description">
-            <span>{{noteCardData.description}}</span>
+            <span (click)="editNotesDialogBox(noteCardData)">{{noteCardData.description}}</span>
         </mat-card-content>
         <div class="note-card-icons">
             <app-app-icons [notes]="noteCardData"></app-app-icons>

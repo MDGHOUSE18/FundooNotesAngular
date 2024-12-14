@@ -44,4 +44,7 @@ export class NotesService {
   paintNote(colordata:any){
     return this.httpService.patchNoteService(`https://localhost:7054/api/Notes/colour`,colordata,{headers: this.authHeaders()});
   }
+  updateNotes(id:number,data:any){
+    return this.httpService.updateService(`https://localhost:7054/api/Notes/${id}`,data,{headers: this.authHeaders()});
+  }
 }

@@ -1,0 +1,51 @@
+<div class="update-note-dialog" [style.background]="color">
+    <!-- Header Section with Title -->
+    <div class="top">
+      <!-- Textarea for Title -->
+      <textarea
+        class="title"
+        rows="1"
+        (input)="adjustTextareaHeight($event)"
+        placeholder="Title"
+        style="overflow: hidden; resize: none"
+        [(ngModel)]="title"
+      ></textarea>
+  
+      <!-- Button with Keep Icon -->
+      <button class="btn">
+        <img
+          class="icons"
+          src="../../../assets/keep-icon.png"
+          alt="Keep"
+        />
+      </button>
+    </div>
+  
+    <!-- Textarea for Description -->
+    <textarea
+      class="description"
+      rows="1"
+      (input)="adjustTextareaHeight($event)"
+      placeholder="Take a note..."
+      style="overflow: hidden; resize: none"
+      [(ngModel)]="description"
+    ></textarea>
+  
+    <!-- Footer Section with Dialog Actions -->
+    <div class="dialog-actions">
+      <!-- Right Section with App Icons and Undo/Redo Buttons -->
+      <div class="right">
+        <app-app-icons></app-app-icons>
+        <button class="btn">
+          <img class="icons" src="../../../assets/undo-icon.png" alt="Undo" />
+          <img class="icons" src="../../../assets/redo-icon.png" alt="Redo" />
+        </button>
+      </div>
+  
+      <!-- Left Section with Close Button -->
+      <div class="left">
+        <button mat-flat-button color="color" (click)="close()">Close</button>
+      </div>
+    </div>
+  </div>
+  
