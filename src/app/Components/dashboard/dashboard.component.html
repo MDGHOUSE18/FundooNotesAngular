@@ -133,11 +133,12 @@
         />
         <span *ngIf="isHovered">Edit Labels</span>
       </a>
-      <a mat-list-item class="sidenav-item">
+      <a mat-list-item class="sidenav-item" [routerLink]="'/dashboard/archive'">
         <img
           class="sidenav-icon"
           src="../../../assets/archive-icon.png"
           alt="Archive"
+
         />
         <span *ngIf="isHovered">Archive</span>
       </a>
@@ -156,3 +157,5 @@
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+

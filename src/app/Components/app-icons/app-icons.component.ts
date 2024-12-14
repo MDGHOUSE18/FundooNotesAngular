@@ -10,19 +10,50 @@ export class AppIconsComponent {
   constructor(private notesService: NotesService) { }
 
   @Input() notes: any;
+  
+  // Create the array of colors
+colorsArr: Array<any> = [
+  { colorName: 'Default', colorCode: '#FFFFFF' },
+  { colorName: 'Coral', colorCode: '#FAAFA8' },
+  { colorName: 'Peach', colorCode: '#F39F76' },
+  { colorName: 'Sand', colorCode: '#FFF8B8' },
+  { colorName: 'Mint', colorCode: '#E2F6D3' },
+  { colorName: 'Sage', colorCode: '#B4DDD3' },
+  { colorName: 'Fog', colorCode: '#D4E4ED' },
+  { colorName: 'Storm', colorCode: '#AECCDC' },
+  { colorName: 'Dusk', colorCode: '#D3BFDB' },
+  { colorName: 'Blossom', colorCode: '#F6E2DD' },
+  { colorName: 'Clay', colorCode: '#E9E3D4' },
+  { colorName: 'Chalk', colorCode: '#EFEFF1' }
+];
+selectColour(color : string){
+  let reqDate ={
+    notesId : this.notes.notesId,
+    colurCode:color
+  }
+
+  this.notesService.paintNote(reqDate).subscribe(
+    (response:any) => {
+      console.log(response.message);
+    },
+    (error:any) => {
+      console.error("Something went wrong while archieve notes: ", error);
+    }
+  )
+}
   onArchive(){
     const notesId = this.notes.notesId;
     // console.log(notesId)
     this.notesService.archiveNotes(notesId).subscribe(
       (response:any) => {
-        console.log("response : ",response);
+        console.log(response.messsage);
       },
       (error:any) => {
         console.error("Something went wrong while archieve notes: ", error);
       }
     )
   }
-  onDelete(){
+  onTrash(){
     const notesId = this.notes.notesId;
     const noteName = this.notes.title;
     // console.log(notesId)
@@ -44,7 +75,7 @@ export class AppIconsComponent {
     // }
     this.notesService.trashNotes(notesId).subscribe(
       (response: any) => {
-        console.log("response : ", response);
+        console.log(response.messsage);
       },
       (error: any) => {
         console.error("Something went wrong while trashing notes: ", error);

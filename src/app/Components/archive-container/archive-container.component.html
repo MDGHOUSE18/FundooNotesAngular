@@ -1,0 +1,10 @@
+
+<div class="archive-container-takenote-div">
+    <app-addnotes></app-addnotes>
+</div>
+
+<div class="archive-container-notes-div">
+    <div *ngFor="let item of noteArr ">
+        <app-note-cards [noteCardData]="item" ></app-note-cards>
+    </div>
+</div>

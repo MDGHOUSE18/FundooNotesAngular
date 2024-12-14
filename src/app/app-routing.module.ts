@@ -8,6 +8,7 @@ import { AddnotesComponent } from './Components/addnotes/addnotes.component';
 import { AppIconsComponent } from './Components/app-icons/app-icons.component';
 import { NoteCardsComponent } from './Components/note-cards/note-cards.component';
 import { NotesContainerComponent } from './Components/notes-container/notes-container.component';
+import { ArchiveContainerComponent } from './Components/archive-container/archive-container.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:'forgotpassword',component:ForgotpasswordComponent},
   {path:'dashboard',component:DashboardComponent,
     children:[
-      {path:'notes',component:NotesContainerComponent}
+      {path:'notes',component:NotesContainerComponent},
+      {path:'archive',component:ArchiveContainerComponent}
     ]
   },
   {path:'addnotes',component:AddnotesComponent},
