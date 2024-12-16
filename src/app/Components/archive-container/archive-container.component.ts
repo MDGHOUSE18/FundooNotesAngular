@@ -7,7 +7,7 @@ import { NotesService } from 'src/app/Services/notesService/notes.service';
   styleUrls: ['./archive-container.component.scss']
 })
 export class ArchiveContainerComponent {
-  noteArr:any;
+  notesData:any;
     constructor(private notes:NotesService){}
     
     ngOnInit(){
@@ -17,7 +17,10 @@ export class ArchiveContainerComponent {
       this.notes.getAllNotes()?.subscribe(
         (response: any) => {
           // console.log('Response:', response);
-          this.noteArr=response.data;
+          // this.noteArr=response.data;
+          this.notesData = response.data.filter(
+            (note: any) => note.isArchive && !note.isTrash
+          );
         },
         (error: any) => {
           console.error('Error fetching notes:', error);
