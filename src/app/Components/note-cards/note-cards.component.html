@@ -8,7 +8,7 @@
             <span (click)="editNotesDialogBox(noteCardData)">{{noteCardData.description}}</span>
         </mat-card-content>
         <div class="note-card-icons">
-            <app-app-icons [notes]="noteCardData"></app-app-icons>
+            <app-app-icons [notes]="noteCardData" (updateDataNote)="refreshNotes($event)"></app-app-icons>
         </div>
     </mat-card>
 </div>
