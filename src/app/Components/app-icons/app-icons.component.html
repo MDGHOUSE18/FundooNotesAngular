@@ -1,4 +1,3 @@
-<!-- <div class="container"> -->
 <div class="icons">
   <img class="icons" src="../../../assets/remaind-me-icon.png" alt="remaind" />
 
@@ -13,6 +12,7 @@
     src="../../../assets/paint-icon.png"
     alt="paint"
     [matMenuTriggerFor]="colourmenu"
+    (click)="handleIconAction('color')"
   />
 
   <img class="icons" src="../../../assets/image-icon.png" alt="image" />
@@ -21,7 +21,7 @@
     class="icons"
     src="../../../assets/archive-icon.png"
     alt="archive"
-    (click)="onArchive()"
+    (click)="handleIconAction('archive')"
   />
 
   <img
@@ -33,38 +33,24 @@
 </div>
 
 <mat-menu #moremenu="matMenu">
-  <button mat-menu-item (click)="onTrash()">Delete Note</button>
+  <button mat-menu-item (click)="handleIconAction('trash')">Delete Note</button>
   <button mat-menu-item>Add label</button>
   <button mat-menu-item>Add drawing</button>
   <button mat-menu-item>Make a copy</button>
   <button mat-menu-item>Show checkboxes</button>
 </mat-menu>
-<!-- <mat-menu #colourmenu="matMenu" xPosition="before" id="colorPalette" >
-  <div *ngFor="let color of colorsArr">
-    <button 
-    mat-menu-item 
-    [style.background]="color.code" 
-    (click)="onTrash()" 
-    [attr.aria-label]="'Color: ' + color.name" 
-    [title]="color.code">
-    {{ color.name }}
-  </button>
-  </div>
 
-</mat-menu> -->
 <mat-menu #colourmenu="matMenu">
   <div class="color-palate-cnt">
     <div *ngFor="let color of colorsArr" class="color-item">
       <button
-        mat-mini-fab
+        mat-icon-button
         class="colorIcon"
         [style.background]="color.colorCode"
         [style.border]="'1px solid #0e0e0d'"
         matTooltip="{{ color.colorName }}"
-        (click)="selectColour(color.colorCode)"
+        (click)="handleIconAction('color', color.colorCode)"
       ></button>
     </div>
   </div>
 </mat-menu>
-
-<!-- </div> -->

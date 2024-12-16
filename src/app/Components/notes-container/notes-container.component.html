@@ -1,11 +1,11 @@
 
 <div class="notes-container-takenote-div">
-    <app-addnotes></app-addnotes>
+    <app-addnotes (updateData)="refreshNotesData($event)"></app-addnotes>
 </div>
 
 <!-- <app-note-cards [noteList]="noteArr"></app-note-cards> -->
 <div class="notes-container-notes-div">
-    <div *ngFor="let item of noteArr ">
-        <app-note-cards [noteCardData]="item" ></app-note-cards>
+    <div *ngFor="let item of notesData ">
+        <app-note-cards [noteCardData]="item" (updateData)="refreshNotesData($event)"></app-note-cards>
     </div>
 </div>

@@ -99,6 +99,7 @@ mat-sidenav {
 }
 .static-sidenav{
   border: none;
+  transition: width 0.3s ease;
 }
 mat-nav-list {
   padding: 0;
@@ -147,6 +148,7 @@ mat-nav-list {
   padding: 16px;
   background-color: #fafafa;
   min-height: 85vh;
+  transition: margin-left 0.3s ease;
 }
 
 /* Responsive Styling */

@@ -31,9 +31,9 @@
   <mat-card appearance="outlined" class="inner2" *ngIf="condition" #matCard>
     <div class="container2">
       <form [formGroup]="addNotesForm">
-        <div class="title">
+        <div class="top">
           <textarea
-            class="textInput"
+            class="title"
             rows="1"
             (input)="adjustTextareaHeight($event)"
             placeholder="Title"
@@ -51,7 +51,7 @@
         </div>
         <div class="note">
           <textarea
-            class="textInput"
+            class="description"
             rows="1"
             (input)="adjustTextareaHeight($event)"
             placeholder="Take a note..."
