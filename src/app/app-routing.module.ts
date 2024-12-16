@@ -9,6 +9,7 @@ import { AppIconsComponent } from './Components/app-icons/app-icons.component';
 import { NoteCardsComponent } from './Components/note-cards/note-cards.component';
 import { NotesContainerComponent } from './Components/notes-container/notes-container.component';
 import { ArchiveContainerComponent } from './Components/archive-container/archive-container.component';
+import { authGuard } from './shared/auth.guard';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -16,14 +17,12 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'forgotpassword',component:ForgotpasswordComponent},
   {path:'dashboard',component:DashboardComponent,
+    canActivate: [authGuard], // Protect the dashboard route
     children:[
       {path:'notes',component:NotesContainerComponent},
       {path:'archive',component:ArchiveContainerComponent}
     ]
-  },
-  {path:'addnotes',component:AddnotesComponent},
-  {path:'icons',component:AppIconsComponent},
-  {path:'notes',component:NoteCardsComponent}
+  }
 ];
 
 @NgModule({
