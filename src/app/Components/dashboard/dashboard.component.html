@@ -40,6 +40,18 @@
       <img src="../../../assets/settings-icon.png" alt="" />
     </button>
   </div>
+  <div>
+    <button mat-icon-button class="example-icon">
+      <img src="../../../assets/apps-icon.png" alt="menuicon" />
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      style="background-color: darkviolet; color: #fff"
+    >
+      <h4>S</h4>
+    </button>
+  </div>
 </mat-toolbar>
 
 <mat-sidenav-container>
@@ -96,7 +108,7 @@
       </a>
     </mat-nav-list>
   </mat-sidenav> -->
-  
+
   <mat-sidenav
     #staticSidenav
     mode="side"
@@ -105,7 +117,7 @@
     (mouseenter)="hoverSidenav(true)"
     (mouseleave)="hoverSidenav(false)"
     [ngStyle]="{
-      width: isSidenavOpen ? '250px' : (isHovered ? '250px' : '60px')
+      width: isSidenavOpen ? '250px' : isHovered ? '250px' : '60px'
     }"
   >
     <mat-nav-list>
@@ -138,7 +150,6 @@
           class="sidenav-icon"
           src="../../../assets/archive-icon.png"
           alt="Archive"
-
         />
         <span *ngIf="isHovered">Archive</span>
       </a>
@@ -152,10 +163,13 @@
       </a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content class="content" >
+  <mat-sidenav-content
+    class="content"
+    [ngStyle]="{
+      'margin-left': isSidenavOpen ? '250px' : '60px'
+    }"
+  >
     <!-- Your content here -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-

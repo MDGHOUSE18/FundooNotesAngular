@@ -1,4 +1,4 @@
-import { Component, Inject, Input } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, Output } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { NotesService } from 'src/app/Services/notesService/notes.service';
 
@@ -13,6 +13,8 @@ export class UpdateNoteComponent {
   id:any;
   description:any;
   color:any;
+
+  @Output() updateDataNote = new EventEmitter();
 
   constructor(
     private notesService:NotesService,
@@ -55,17 +57,21 @@ export class UpdateNoteComponent {
     let reqDate={
       title:this.title,
       description:this.description,
-      color:this.color
+      color:this.color,
+      notesId:this.id
     }
     this.notesService.updateNotes(this.id,reqDate).subscribe(
       (response:any) => {
-        console.log(response.message)
+        // console.log(response.message)
+        // this.updateDataNote.emit({reqDate,action:'update'});
+        this.dialogRef.close(reqDate);
       },
       (error) =>{
         console.error('Something went wrong for updating notes ',error)
       }
     )
-    this.dialogRef.close();
   }
-  
+  refreshNotes($event:any){
+    this.updateDataNote.emit($event);
+  }
 }
