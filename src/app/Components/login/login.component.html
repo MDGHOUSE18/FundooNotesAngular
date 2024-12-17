@@ -1,17 +1,35 @@
 <div class="outer">
   <div class="inner">
-    <mat-progress-bar mode="indeterminate" *ngIf="bar == true"></mat-progress-bar>
+    <!-- Progress Bar (Loading Indicator) -->
+    <mat-progress-bar
+      mode="indeterminate"
+      *ngIf="bar == true"
+    ></mat-progress-bar>
+
     <div class="container">
-    <div class="left">
+      <!-- Left Section -->
+      <div class="left">
         <img src="../../../assets/logo.png" alt="Logo" />
         <h1>Sign in</h1>
         <p>Use your Fundoo Account</p>
       </div>
+
+      <!-- Right Section (Form) -->
       <div class="right">
-      <form [formGroup]="loginForm" >
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <!-- Top Section -->
           <div class="top">
+            <!-- Username Field -->
             <p>
               <mat-form-field appearance="outline">
+                <mat-error
+                  *ngIf="loginForm.get('username')?.hasError('required')"
+                >
+                  Email or phone is required.
+                </mat-error>
+                <mat-error *ngIf="loginForm.get('username')?.hasError('email')">
+                  Email is not valid.
+                </mat-error>
                 <mat-label>Email or Phone</mat-label>
                 <input
                   matInput
@@ -20,6 +38,8 @@
                 />
               </mat-form-field>
             </p>
+
+            <!-- Password Field -->
             <p>
               <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
@@ -29,9 +49,11 @@
                   placeholder="Password"
                   formControlName="password"
                 />
+                <!-- Toggle Password Visibility -->
                 <button
                   mat-icon-button
                   matSuffix
+                  type="button"
                   (click)="hide = !hide"
                   [attr.aria-label]="'Hide password'"
                   [attr.aria-pressed]="hide"
@@ -40,13 +62,33 @@
                     hide ? "visibility_off" : "visibility"
                   }}</mat-icon>
                 </button>
+                <mat-error
+                  *ngIf="loginForm.get('password')?.hasError('required')"
+                >
+                  Password is required.
+                </mat-error>
+                <mat-error
+                  *ngIf="loginForm.get('password')?.hasError('pattern')"
+                >
+                  Password must be at least 8 characters, including uppercase,
+                  lowercase, number, and special character.
+                </mat-error>
               </mat-form-field>
-              <a href="forgotpassword">Forgot password</a>
+              <a routerLink="/forgotpassword">Forgot password?</a>
             </p>
           </div>
+
+          <!-- Bottom Section -->
           <div class="bottom">
-            <a href="register">Create Account</a>
-            <button mat-flat-button color="primary"  (click)="onSubmit()">Login</button>
+            <a routerLink="/register">Create Account</a>
+            <button
+              mat-flat-button
+              color="primary"
+              type="submit"
+              [disabled]="!loginForm.valid"
+            >
+              Login
+            </button>
           </div>
         </form>
       </div>

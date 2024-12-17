@@ -27,4 +27,17 @@ export class TrashContainerComponent {
       }
     );
   }
+  refreshNotesData($event: { data: any; action: string }) {
+    const { data, action } = $event;
+    if (action == 'archive'){
+      this.notesData = this.notesData.filter(
+        (note: any) => note.notesId !== data.notesId
+      );
+    }else if (action == 'delete'){
+      this.notesData = this.notesData.filter(
+        (note: any) => note.notesId !== data.notesId
+      );
+    }
+    this.getnote();
+  }
 }

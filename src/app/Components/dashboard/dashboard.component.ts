@@ -14,8 +14,8 @@ export class DashboardComponent {
   constructor(private data:DataService){}
 
   Search(event:any){
-    console.log(event.target.value)
-    this.data.outgoingData(event.target.value);
+    // console.log(event.target.value)
+    this.data.outgoingData(event.target.value.toLowerCase());
   }
   /**
    * Toggles the sidenav between open and closed states.
@@ -31,4 +31,22 @@ export class DashboardComponent {
       this.isHovered = isHovering;
     }
   }
+
+  logout() {
+    // Confirmation message before logging out
+    const confirmation = window.confirm('Are you sure you want to logout?');
+  
+    if (confirmation) {
+      // Clear tokens from localStorage and sessionStorage
+      localStorage.removeItem('token');
+      sessionStorage.removeItem('token');
+  
+      console.log('Logged out successfully.');
+      // Optionally redirect to login page
+      window.location.href = '/login'; // Adjust the URL as per your app's route
+    } else {
+      console.log('Logout cancelled.');
+    }
+  }
+  
 }

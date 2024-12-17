@@ -27,6 +27,7 @@ export class UpdateNoteComponent {
     this.description = data.description,
     this.id=data.notesId,
     this.color=data.colour
+    this.notes = data;
   }
 
   ngOnInit(){
@@ -72,6 +73,13 @@ export class UpdateNoteComponent {
     )
   }
   refreshNotes($event:any){
-    this.updateDataNote.emit($event);
+    const { data, action } = $event;
+    if (action === 'color'){
+
+      console.log(data)
+      this.color = data.colurCode
+    } else if (action == 'archive' || action == 'trash'){
+      this.dialogRef.close(data);
+    }
   }
 }
