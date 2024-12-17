@@ -5,7 +5,7 @@
 
 <!-- <app-note-cards [noteList]="noteArr"></app-note-cards> -->
 <div class="notes-container-notes-div">
-    <div *ngFor="let item of notesData ">
+    <div *ngFor="let item of notesData | filter : filterNotes">
         <app-note-cards [noteCardData]="item" (updateData)="refreshNotesData($event)"></app-note-cards>
     </div>
 </div>

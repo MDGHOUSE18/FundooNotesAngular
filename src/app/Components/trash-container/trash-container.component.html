@@ -1,0 +1,10 @@
+
+<div class="trash-container-takenote-div">
+    <app-addnotes></app-addnotes>
+</div>
+
+<div class="trash-container-notes-div">
+    <div *ngFor="let item of notesData ">
+        <app-note-cards [noteCardData]="item" ></app-note-cards>
+    </div>
+</div>

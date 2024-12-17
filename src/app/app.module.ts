@@ -34,6 +34,10 @@ import { NoteCardsComponent } from './Components/note-cards/note-cards.component
 import { NotesContainerComponent } from './Components/notes-container/notes-container.component';
 import { ArchiveContainerComponent } from './Components/archive-container/archive-container.component';
 import { UpdateNoteComponent } from './Components/update-note/update-note.component';
+import { TrashContainerComponent } from './Components/trash-container/trash-container.component';
+
+import { GuardService } from './Services/shared/guard.service';
+import { FilterPipe } from './Pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,9 @@ import { UpdateNoteComponent } from './Components/update-note/update-note.compon
     NoteCardsComponent,
     NotesContainerComponent,
     ArchiveContainerComponent,
-    UpdateNoteComponent
+    UpdateNoteComponent,
+    TrashContainerComponent,
+    FilterPipe
   ],
   imports: [
     // Core Angular modules
@@ -76,7 +82,9 @@ import { UpdateNoteComponent } from './Components/update-note/update-note.compon
     // App routing module
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    GuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

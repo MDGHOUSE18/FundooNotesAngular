@@ -25,7 +25,7 @@
           class="search-icon"
         />
       </button>
-      <input matInput placeholder="Search" value="" class="search-input" />
+      <input matInput placeholder="Search" value="" class="search-input" (keyup)="Search($event)"/>
     </div>
   </div>
 
@@ -153,7 +153,7 @@
         />
         <span *ngIf="isHovered">Archive</span>
       </a>
-      <a mat-list-item class="sidenav-item">
+      <a mat-list-item class="sidenav-item" [routerLink]="'/dashboard/trash'">
         <img
           class="sidenav-icon"
           src="../../../assets/trash-icon.png"

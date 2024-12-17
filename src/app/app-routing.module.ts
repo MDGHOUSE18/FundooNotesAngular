@@ -10,6 +10,7 @@ import { NoteCardsComponent } from './Components/note-cards/note-cards.component
 import { NotesContainerComponent } from './Components/notes-container/notes-container.component';
 import { ArchiveContainerComponent } from './Components/archive-container/archive-container.component';
 import { authGuard } from './shared/auth.guard';
+import { TrashContainerComponent } from './Components/trash-container/trash-container.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [
     canActivate: [authGuard], // Protect the dashboard route
     children:[
       {path:'notes',component:NotesContainerComponent},
-      {path:'archive',component:ArchiveContainerComponent}
+      {path:'archive',component:ArchiveContainerComponent},
+      {path:'trash',component:TrashContainerComponent}
     ]
   }
 ];

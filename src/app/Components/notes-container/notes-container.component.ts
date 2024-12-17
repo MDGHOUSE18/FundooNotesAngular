@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/Services/dataService/data.service';
 import { NotesService } from 'src/app/Services/notesService/notes.service';
 
 @Component({
@@ -8,10 +9,21 @@ import { NotesService } from 'src/app/Services/notesService/notes.service';
 })
 export class NotesContainerComponent implements OnInit {
   notesData: any;
-  constructor(private notes: NotesService) {}
+  filterNotes:any;
+  constructor(
+    private notes: NotesService,
+    private data:DataService
+  ) {}
 
   ngOnInit() {
     this.getnote();
+
+    this.data.incomingData.subscribe(
+      (response :any)=>{
+        console.log('search in progress',response)
+        this.filterNotes = response;
+      }
+    )
   }
   getnote() {
     this.notes.getAllNotes()?.subscribe(
