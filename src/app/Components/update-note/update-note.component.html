@@ -35,7 +35,7 @@
     <div class="dialog-actions">
       <!-- Right Section with App Icons and Undo/Redo Buttons -->
       <div class="right">
-        <app-app-icons  (updateDataNote)="refreshNotes($event)"></app-app-icons>
+        <app-app-icons [notes]="notes"  (updateDataNote)="refreshNotes($event)"></app-app-icons>
         <button class="btn">
           <img class="icons" src="../../../assets/undo-icon.png" alt="Undo" />
           <img class="icons" src="../../../assets/redo-icon.png" alt="Redo" />

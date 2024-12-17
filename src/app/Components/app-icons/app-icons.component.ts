@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NotesService } from 'src/app/Services/notesService/notes.service';
 
 @Component({
@@ -6,10 +6,20 @@ import { NotesService } from 'src/app/Services/notesService/notes.service';
   templateUrl: './app-icons.component.html',
   styleUrls: ['./app-icons.component.scss'],
 })
-export class AppIconsComponent {
+export class AppIconsComponent implements OnInit{
   constructor(private notesService: NotesService) {}
   @Output() updateDataNote = new EventEmitter();
   @Input() notes: any;
+  
+  isArchive: boolean = false;
+  isTrash:boolean =false;
+
+  ngOnInit(): void {
+    if (this.notes) {
+      this.isArchive = this.notes.isArchive || false;
+      this.isTrash = this.notes.isTrash || false;
+    }
+  }
 
   // Create the array of colors
   colorsArr: Array<any> = [
@@ -96,4 +106,28 @@ export class AppIconsComponent {
       }
     );
   }
+  onDelete() {
+    const notesId = this.notes.notesId;
+    const noteName = this.notes.title;
+  
+    // Confirmation message before deleting
+    const confirmation = window.confirm(
+      `Are you sure you want to delete the note titled "${noteName}"?`
+    );
+  
+    if (confirmation) {
+      this.notesService.deleteNotes(notesId).subscribe(
+        (response: any) => {
+          console.log(response.message);
+          this.updateDataNote.emit({ data: notesId, action: 'delete' });
+        },
+        (error) => {
+          console.error('Something went wrong while deleting notes: ', error);
+        }
+      );
+    } else {
+      console.log('Note deletion was cancelled.');
+    }
+  }
+  
 }

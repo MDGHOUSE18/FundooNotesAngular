@@ -1,45 +1,110 @@
-<div class="icons">
-  <img class="icons" src="../../../assets/remaind-me-icon.png" alt="remaind" />
+<div class="icons" *ngIf="!isTrash">
+  <img
+    class="icons"
+    src="../../../assets/remaind-me-icon.png"
+    alt="Remind Me"
+    matTooltip="Remind Me"
+    aria-label="Remind Me"
+  />
 
   <img
     class="icons"
     src="../../../assets/collaburator-icon.png"
-    alt="collaburator"
+    alt="Collaborate"
+    matTooltip="Collaborate"
+    aria-label="Collaborate"
   />
 
   <img
     class="icons"
     src="../../../assets/paint-icon.png"
-    alt="paint"
+    alt="Change Color"
+    matTooltip="Change Color"
+    aria-label="Change Color"
     [matMenuTriggerFor]="colourmenu"
     (click)="handleIconAction('color')"
   />
 
-  <img class="icons" src="../../../assets/image-icon.png" alt="image" />
+  <img
+    class="icons"
+    src="../../../assets/image-icon.png"
+    alt="Add Image"
+    matTooltip="Add Image"
+    aria-label="Add Image"
+  />
 
+  <!-- Archive/Unarchive with Tooltips -->
   <img
     class="icons"
     src="../../../assets/archive-icon.png"
-    alt="archive"
+    alt="Archive"
+    matTooltip="Archive"
+    aria-label="Archive"
     (click)="handleIconAction('archive')"
+    *ngIf="!isArchive"
+  />
+  <img
+    class="icons"
+    src="../../../assets/unarchive-icon.png"
+    alt="Unarchive"
+    matTooltip="Unarchive"
+    aria-label="Unarchive"
+    (click)="handleIconAction('unarchive')"
+    *ngIf="isArchive"
   />
 
   <img
     class="icons"
     src="../../../assets/more-icon.png"
-    alt="moremenu"
+    alt="More Options"
+    matTooltip="More Options"
+    aria-label="More Options"
     [matMenuTriggerFor]="moremenu"
   />
 </div>
 
+<!-- Trash Section -->
+<div class="icons" *ngIf="isTrash">
+  
+  <img
+  class="icons"
+  src="../../../assets/delete_forever-icon.png"
+  alt="Delete forever"
+  matTooltip="Delete forever"
+  aria-label="Delete forever"
+  (click)="onDelete()"
+  />
+  <img
+    class="icons"
+    src="../../../assets/restore_from_trash-icon.png"
+    alt="Restore"
+    matTooltip="Restore"
+    aria-label="Restore"
+    (click)="handleIconAction('trash')"
+  />
+  
+</div>
+
+<!-- More Options Menu -->
 <mat-menu #moremenu="matMenu">
-  <button mat-menu-item (click)="handleIconAction('trash')">Delete Note</button>
-  <button mat-menu-item>Add label</button>
-  <button mat-menu-item>Add drawing</button>
-  <button mat-menu-item>Make a copy</button>
-  <button mat-menu-item>Show checkboxes</button>
+  <button mat-menu-item (click)="handleIconAction('trash')">
+    <span matTooltip="Delete Note">Delete Note</span>
+  </button>
+  <button mat-menu-item>
+    <span matTooltip="Add Label">Add Label</span>
+  </button>
+  <button mat-menu-item>
+    <span matTooltip="Add Drawing">Add Drawing</span>
+  </button>
+  <button mat-menu-item>
+    <span matTooltip="Make a Copy">Make a Copy</span>
+  </button>
+  <button mat-menu-item>
+    <span matTooltip="Show Checkboxes">Show Checkboxes</span>
+  </button>
 </mat-menu>
 
+<!-- Colour Menu -->
 <mat-menu #colourmenu="matMenu">
   <div class="color-palate-cnt">
     <div *ngFor="let color of colorsArr" class="color-item">
@@ -48,8 +113,9 @@
         class="colorIcon"
         [style.background]="color.colorCode"
         [style.border]="'1px solid #0e0e0d'"
-        matTooltip="{{ color.colorName }}"
+        matTooltip="color.colorName"
         (click)="handleIconAction('color', color.colorCode)"
+        aria-label="color.colorName"
       ></button>
     </div>
   </div>

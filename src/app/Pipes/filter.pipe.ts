@@ -13,7 +13,7 @@ export class FilterPipe implements PipeTransform {
 
     const notes = [];
     for(const note of value){
-      if (note.title.includes(filterNote)) {
+      if (note.title.toLowerCase().includes(filterNote)) {
         notes.push(note)
       }
     }

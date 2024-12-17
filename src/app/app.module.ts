@@ -18,6 +18,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 // App Routing Module
 import { AppRoutingModule } from './app-routing.module';
@@ -78,6 +79,7 @@ import { FilterPipe } from './Pipes/filter.pipe';
     MatMenuModule,
     MatTooltipModule,
     MatDialogModule,
+    MatSnackBarModule,
 
     // App routing module
     AppRoutingModule

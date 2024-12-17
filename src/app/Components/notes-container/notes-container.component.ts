@@ -20,7 +20,7 @@ export class NotesContainerComponent implements OnInit {
 
     this.data.incomingData.subscribe(
       (response :any)=>{
-        console.log('search in progress',response)
+        // console.log('search in progress',response)
         this.filterNotes = response;
       }
     )
@@ -73,6 +73,7 @@ export class NotesContainerComponent implements OnInit {
         }
         return note;
       });
+      this.getnote();
     }
   }
 }

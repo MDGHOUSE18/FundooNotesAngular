@@ -25,7 +25,13 @@
           class="search-icon"
         />
       </button>
-      <input matInput placeholder="Search" value="" class="search-input" (keyup)="Search($event)"/>
+      <input
+        matInput
+        placeholder="Search"
+        value=""
+        class="search-input"
+        (keyup)="Search($event)"
+      />
     </div>
   </div>
 
@@ -47,9 +53,10 @@
     <button
       mat-icon-button
       class="example-icon"
-      style="background-color: darkviolet; color: #fff"
+      style="background-color: darkviolet; color: #fff; align-content: center;"
+      (click)="logout()"
     >
-      <h4>S</h4>
+      <h4>G</h4>
     </button>
   </div>
 </mat-toolbar>

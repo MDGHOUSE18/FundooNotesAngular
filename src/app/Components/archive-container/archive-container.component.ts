@@ -4,27 +4,36 @@ import { NotesService } from 'src/app/Services/notesService/notes.service';
 @Component({
   selector: 'app-archive-container',
   templateUrl: './archive-container.component.html',
-  styleUrls: ['./archive-container.component.scss']
+  styleUrls: ['./archive-container.component.scss'],
 })
 export class ArchiveContainerComponent {
-  notesData:any;
-    constructor(private notes:NotesService){}
-    
-    ngOnInit(){
-      this.getnote();
-    }
-    getnote(){
-      this.notes.getAllNotes()?.subscribe(
-        (response: any) => {
-          // console.log('Response:', response);
-          // this.noteArr=response.data;
-          this.notesData = response.data.filter(
-            (note: any) => note.isArchive && !note.isTrash
-          );
-        },
-        (error: any) => {
-          console.error('Error fetching notes:', error);
-        }
+  notesData: any;
+  constructor(private notes: NotesService) {}
+
+  ngOnInit() {
+    this.getnote();
+  }
+  getnote() {
+    this.notes.getAllNotes()?.subscribe(
+      (response: any) => {
+        // console.log('Response:', response);
+        // this.noteArr=response.data;
+        this.notesData = response.data.filter(
+          (note: any) => note.isArchive && !note.isTrash
+        );
+      },
+      (error: any) => {
+        console.error('Error fetching notes:', error);
+      }
+    );
+  }
+
+  refreshNotesData($event: { data: any; action: string }) {
+    const { data, action } = $event;
+    if (action == 'archive')
+      this.notesData = this.notesData.filter(
+        (note: any) => note.notesId !== data.notesId
       );
-    }
+    this.getnote();
+  }
 }
