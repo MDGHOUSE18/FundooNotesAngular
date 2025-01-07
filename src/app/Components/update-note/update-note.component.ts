@@ -12,7 +12,7 @@ export class UpdateNoteComponent {
   title:any;
   id:any;
   description:any;
-  color:any;
+  colour:any;
 
   @Output() updateDataNote = new EventEmitter();
 
@@ -26,7 +26,7 @@ export class UpdateNoteComponent {
     this.title = data.title,
     this.description = data.description,
     this.id=data.notesId,
-    this.color=data.colour
+    this.colour=data.colour
     this.notes = data;
   }
 
@@ -58,7 +58,7 @@ export class UpdateNoteComponent {
     let reqDate={
       title:this.title,
       description:this.description,
-      color:this.color,
+      colour:this.colour,
       notesId:this.id
     }
     this.notesService.updateNotes(this.id,reqDate).subscribe(
@@ -77,7 +77,7 @@ export class UpdateNoteComponent {
     if (action === 'color'){
 
       console.log(data)
-      this.color = data.colurCode
+      this.colour = data.colurCode
     } else if (action == 'archive' || action == 'trash'){
       this.dialogRef.close(data);
     }

@@ -15,6 +15,7 @@ export class AppIconsComponent implements OnInit{
   isTrash:boolean =false;
 
   ngOnInit(): void {
+    
     if (this.notes) {
       this.isArchive = this.notes.isArchive || false;
       this.isTrash = this.notes.isTrash || false;

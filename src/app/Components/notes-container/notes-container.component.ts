@@ -40,40 +40,39 @@ export class NotesContainerComponent implements OnInit {
     );
   }
   refreshNotes() {
-    this.getnote(); // Refresh the notes list
+    this.getnote(); 
   }
   refreshNotesData($event: { data: any; action: string }) {
     const { data, action } = $event;
-
-    if (action == 'add') this.notesData = [data, ...this.notesData];
-    else if (action == 'archive' || action == 'trash') {
-      // Remove the note from the array by its notesId
+    // console.log('Action:', action);
+    // console.log('Data:', data);
+    // console.log('Notes before update:', this.notesData);
+  
+    if (action === 'add') {
+      this.notesData = [data, ...this.notesData];
+    } else if (action === 'archive' || action === 'trash') {
       this.notesData = this.notesData.filter(
-        (note: any) => note.notesId !== data.notesId
+        (note: any) => note.notesId !== data
       );
-      this.getnote();
     } else if (action === 'color') {
-      // Update the note's color in the local state
-      // console.log('Before Update:', this.notesData);
-    
-      this.notesData = [...this.notesData.map((note: any) => {
-        if (note.notesId === data.notesId) {
-          // console.log(`Updating color for noteId ${note.notesId} to ${data.color}`);
-          return { ...note, color: data.color }; // Update the color
-        }
-        return note;
-      })];
-      this.getnote();
-      // console.log('After Update:', this.notesData);
+      this.notesData = this.notesData.map((note: any) =>
+        note.notesId === data.notesId ? { ...note, colour: data.colurCode } : note
+      );
     } else if (action === 'update') {
-      // Update the note with the new data
-      this.notesData = this.notesData.map((note: any) => {
-        if (note.notesId === data.notesId) {
-          return { ...note, ...data }; // Merge the existing note data with the updated data
-        }
-        return note;
-      });
-      this.getnote();
+      this.notesData = this.notesData.map((note: any) =>
+        note.notesId === data.notesId ? { ...note, ...data } : note
+      );
+  //     console.log('Before Update:', this.notesData);
+  // console.log('Updating Note ID:', data.notesId, 'With Data:', data);
+
+  // this.notesData = this.notesData.map((note: any) =>
+  //   note.notesId === data.notesId ? { ...note, ...data } : note
+  // );
+
+  // console.log('After Update:', this.notesData);
     }
+  
+    // console.log('Notes after update:', this.notesData);
   }
+  
 }
